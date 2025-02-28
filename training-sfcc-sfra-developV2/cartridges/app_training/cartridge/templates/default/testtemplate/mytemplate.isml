@@ -1,0 +1,11 @@
+ <isset name = "secondvar" value = "${pdict.myvariable}" scope = "session" />
+ <isset name = "thirdvar" value = 40 scope = "page" />
+ <h1> Training </h1>
+ <isif condition="${session.custom.secondvar === 32}" >
+   ${pdict.myvariable}
+ </isif>
+    <isprint value ="${thirdvar}" />
+
+ ${thirdvar}
+ <iscomment> <isinclude url="${URLUtils.https('remotecontroller-Show')}"/> 
+ <a href= "${URLUtils.https('remotecontroller-Show')}"> Click for coupon </a> </iscomment>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users xmlns="http://www.demandware.com/xml/impex/user/2007-09-05">
+    <user login="vladislav.georgiev204@gmail.com" enabled-flag="true">
+        <credentials>
+            <external-id>38525eea-93cb-4470-aeb5-fad9f15a773a</external-id>
+        </credentials>
+        <profile>
+            <first-name>Vladislav</first-name>
+            <last-name>Georgiev</last-name>
+            <email>vladislav.georgiev204@gmail.com</email>
+            <phone-business>+359 882723331</phone-business>
+            <phone-mobile>+359 882723331</phone-mobile>
+            <preferred-data-locale>none</preferred-data-locale>
+        </profile>
+    </user>
+
+</users>
