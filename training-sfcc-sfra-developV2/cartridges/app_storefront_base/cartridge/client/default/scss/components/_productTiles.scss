@@ -2,6 +2,12 @@
 @import "productCommon";
 @import "quickView";
 
+.discount-percentage {
+    font-size: 15px;
+    color: red;
+    font-weight: bold;
+}
+
 .product-tile {
 
     @include media-breakpoint-down(md) {

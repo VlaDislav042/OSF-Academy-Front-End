@@ -488,7 +488,22 @@ function getProductSearchHit(apiProduct) {
     return hit;
 }
 
+/**
+ * @param {number} standardPrice
+ * @param {number} salePrice
+ * 
+ */
+function calculatePercentageOff(standardPrice, salePrice) {
+    var discountPercentage = null;
+    if (salePrice && standardPrice > salePrice) {
+        discountPercentage = ((standardPrice - salePrice) / standardPrice) * 100;
+        return discountPercentage.toFixed(0);
+    }
+    return null;
+}
+
 module.exports = {
+    calculatePercentageOff: calculatePercentageOff,
     getOptionValues: getOptionValues,
     getOptions: getOptions,
     getCurrentOptionModel: getCurrentOptionModel,
