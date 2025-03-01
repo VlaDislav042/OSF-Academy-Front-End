@@ -3,6 +3,7 @@
         "iscontent",
         "isdecorate",
         "isinclude",
-        "pdict"
+        "pdict",
+        "srule"
     ]
 }

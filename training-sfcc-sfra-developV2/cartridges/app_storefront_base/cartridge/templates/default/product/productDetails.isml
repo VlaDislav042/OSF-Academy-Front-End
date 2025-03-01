@@ -145,8 +145,7 @@
             <div class="recommendations">
                 <isslot id="product-recommendations-m" description="Recommended products" context="global"
                     context-object="${pdict.product.raw}" />
-                TEST
-                <p>${pdict.test_variable}</p>
+                <!--<p>${pdict.test_variable}</p>-->
                 <isloop items="${pdict.suggestedProducts}" var="product">
                     <div class="suggested-product">
                         <h3>${product.productName}</h3>
