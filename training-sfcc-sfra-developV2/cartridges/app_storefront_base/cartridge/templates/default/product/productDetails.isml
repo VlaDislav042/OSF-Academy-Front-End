@@ -146,14 +146,21 @@
                 <isslot id="product-recommendations-m" description="Recommended products" context="global"
                     context-object="${pdict.product.raw}" />
                 <!--<p>${pdict.test_variable}</p>-->
-                <isloop items="${pdict.suggestedProducts}" var="product">
-                    <div class="suggested-product">
-                        <h3>${product.productName}</h3>
-                        <img src="${product.imageURL}" alt="${product.name}" />
-                        <p>Price: ${product.price}</p>
-                        <a href="${product.url}">View Product</a>
-                    </div>
-                </isloop>
+                <table class="suggested-products-table">
+                    <tr>
+                        <isloop items="${pdict.suggestedProducts}" var="product">
+                            <td class="suggested-product">
+                                <img class="recommended-product-image" src="${product.imageURL}"
+                                    alt="${product.name}" />
+                                <div class="product-info">
+                                    <p>Color: ${product.color}</p>
+                                    <a href="${product.url}">${product.productName}</a>
+                                    <p class="recommended-product-price">$${product.maxPrice}</p>
+                                </div>
+                            </td>
+                        </isloop>
+                    </tr>
+                </table>
             </div>
         </div>
     </isobject>

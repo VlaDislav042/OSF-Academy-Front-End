@@ -37,26 +37,38 @@ server.append('Show', function (req, res, next) {
                 var image = suggestedProduct.getImage('large'); // Specify the image view type
                 var imageURL = image ? image.getURL().toString() : 'No Image Available';
 
-                // Retrieve the price
+                // Retrieve the max price
                 var priceModel = suggestedProduct.getPriceModel();
-                var price = 'Price Not Available';
+                var maxPrice = 'Price Not Available';
+
                 if (priceModel) {
-                    var productPrice = priceModel.getPrice();
-                    if (productPrice) {
-                        price = productPrice.getValue();
+                    var maxPriceValue = priceModel.maxPrice;
+                    if (maxPriceValue) {
+                        maxPrice = maxPriceValue.getValue();
+                    } else {
+                        console.log('No max price available for product ID: ' + suggestedProductId);
                     }
+                } else {
+                    console.log('No price model available for product ID: ' + suggestedProductId);
                 }
 
                 // Generate the product URL
                 var productURL = URLUtils.url('Product-Show', 'pid', suggestedProduct.ID).toString();
 
-                // Extract the properties you need
+                // Retrieve the rating
+                //var rating = suggestedProduct.custom && suggestedProduct.custom.rating ? suggestedProduct.custom.rating : 'No Rating Available';
+
+                // Retrieve the color
+                var color = suggestedProduct.custom && suggestedProduct.custom.color ? suggestedProduct.custom.color : 'No Color Available';
+
                 var productData = {
                     productName: suggestedProduct.name || 'No Name Available',
                     productID: suggestedProduct.ID,
                     imageURL: imageURL,
-                    price: price,
-                    url: productURL
+                    maxPrice: maxPrice,
+                    url: productURL,
+                    color: color,
+                    // rating: rating
                 };
 
                 suggestedProducts.push(productData);
