@@ -1,0 +1,7 @@
+<isif condition="${empty pdict.suggestedProducts}">
+    <p></p>
+</isif>
+<isloop items="${pdict.suggestedProducts}" var="product">
+    <p>${product.ID}</p>
+    <isinclude template="product/productTile" context="product: product" />
+</isloop>

@@ -2,6 +2,47 @@
 @import "productCommon";
 @import "quickView";
 
+.suggested-products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recommended-product-price {
+    font-weight: bold;
+}
+
+.suggested-product {
+    text-align: center;
+    padding: 10px;
+    vertical-align: top;
+    /* Ensures content is aligned at the top of the cell */
+}
+
+.recommended-product-image {
+    width: 250px;
+    height: 100%;
+    /* Increase size as needed */
+    display: block;
+    margin: 0 auto;
+}
+
+.product-info {
+    margin-top: 10px;
+    text-align: left;
+    /* Aligns text to the left */
+
+}
+
+.product-info a {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-info p {
+    margin: 0;
+}
+
 .product-tile {
 
     @include media-breakpoint-down(md) {

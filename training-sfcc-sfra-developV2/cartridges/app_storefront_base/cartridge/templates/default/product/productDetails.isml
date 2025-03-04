@@ -15,7 +15,7 @@
                 <div class="col-12">
                     <!--Breadcrumbs-->
                     <div class="product-breadcrumb d-md-none">
-                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
                     </div>
 
                     <!-- Product Name -->
@@ -35,7 +35,7 @@
                     <!--Breadcrumbs-->
                     <div class="row">
                         <div class="product-breadcrumb col hidden-sm-down">
-                            <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                            <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
                         </div>
                     </div>
 
@@ -58,7 +58,8 @@
                         <isinclude template="product/components/mainAttributes" />
 
                         <isset name="isBundle" value="${false}" scope="page" />
-                        <isset name="loopState" value="${{count: 1}}" scope="page" />
+                        <isset name="loopState" value="${{
+                                                       count: 1}}" scope="page" />
                         <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
                             <div class="row" data-attr="${attr.id}">
                                 <div class="col-8">
@@ -133,14 +134,38 @@
             </div>
 
             <div>
-                <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
+                <isslot id="cts-recommendations-m" description="Complete the set products" context="global"
+                    context-object="${pdict.product.raw}" />
             </div>
 
-            <isset name="loopState" value="${{count: 1}}" scope="page" />
+            <isset name="loopState" value="${{
+                                           count: 1}}" scope="page" />
             <isinclude template="product/components/descriptionAndDetails" />
 
             <div class="recommendations">
-                <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
+                <isslot id="product-recommendations-m" description="Recommended products" context="global"
+                    context-object="${pdict.product.raw}" />
+                <!--<p>${pdict.test_variable}</p>-->
+                <table class="suggested-products-table">
+                    <tr>
+                        <isloop items="${pdict.suggestedProducts}" var="product">
+                            <td class="suggested-product">
+                                <img class="recommended-product-image" src="${product.imageURL}"
+                                    alt="${product.name}" />
+                                <div class="product-info">
+                                    <p>Color:
+                                        <isif condition="${product.colorImageURL}">
+                                            <img src="${product.colorImageURL}" alt="Color" class="color-image" />
+                                            <iselse>
+                                                ${product.color}
+                                        </isif>
+                                    </p> <a href="${product.url}">${product.productName}</a>
+                                    <p class="recommended-product-price">$${product.maxPrice}</p>
+                                </div>
+                            </td>
+                        </isloop>
+                    </tr>
+                </table>
             </div>
         </div>
     </isobject>
