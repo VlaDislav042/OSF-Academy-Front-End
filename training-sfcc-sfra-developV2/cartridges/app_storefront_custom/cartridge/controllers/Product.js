@@ -55,11 +55,8 @@ server.append('Show', function (req, res, next) {
                 // Generate the product URL
                 var productURL = URLUtils.url('Product-Show', 'pid', suggestedProduct.ID).toString();
 
-                // Retrieve the rating
-                //var rating = suggestedProduct.custom && suggestedProduct.custom.rating ? suggestedProduct.custom.rating : 'No Rating Available';
-
                 // Retrieve the color
-                var color = suggestedProduct.custom && suggestedProduct.custom.color ? suggestedProduct.custom.color : 'No Color Available';
+                var color = (suggestedProduct.custom && suggestedProduct.custom.color !== null) ? suggestedProduct.custom.color : 'No Color Available';
 
                 var productData = {
                     productName: suggestedProduct.name || 'No Name Available',
@@ -67,8 +64,7 @@ server.append('Show', function (req, res, next) {
                     imageURL: imageURL,
                     maxPrice: maxPrice,
                     url: productURL,
-                    color: color,
-                    // rating: rating
+                    color: color
                 };
 
                 suggestedProducts.push(productData);

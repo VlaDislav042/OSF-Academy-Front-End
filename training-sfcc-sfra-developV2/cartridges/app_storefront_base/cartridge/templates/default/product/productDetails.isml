@@ -153,8 +153,13 @@
                                 <img class="recommended-product-image" src="${product.imageURL}"
                                     alt="${product.name}" />
                                 <div class="product-info">
-                                    <p>Color: ${product.color}</p>
-                                    <a href="${product.url}">${product.productName}</a>
+                                    <p>Color:
+                                        <isif condition="${product.colorImageURL}">
+                                            <img src="${product.colorImageURL}" alt="Color" class="color-image" />
+                                            <iselse>
+                                                ${product.color}
+                                        </isif>
+                                    </p> <a href="${product.url}">${product.productName}</a>
                                     <p class="recommended-product-price">$${product.maxPrice}</p>
                                 </div>
                             </td>
