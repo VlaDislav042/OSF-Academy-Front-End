@@ -7,6 +7,21 @@
 $spacer: 0.625em;
 $negative-spacer: -0.625rem;
 
+.cart-message {
+    display: inline-block;
+    /* Ensures the background only covers the text */
+    background-color: orange;
+    /* Light yellow background */
+    border: 1px solid #ccc;
+    /* Light gray border */
+    padding: 15px 200px 15px 20px;
+    /* Increase right padding for a larger background */
+    margin-top: 15px;
+    /* Adjust margin for spacing above */
+    font-size: 16px;
+    color: #333;
+}
+
 .single-approaching-discount {
     border: 1px solid rgba(0, 0, 0, 12.5%);
     background-color: $white;
@@ -205,7 +220,7 @@ $negative-spacer: -0.625rem;
     border-radius: 0.1875rem;
 }
 
-.coupon-price-adjustment + .coupon-price-adjustment {
+.coupon-price-adjustment+.coupon-price-adjustment {
     margin-top: 0.625rem;
 }
 
@@ -265,8 +280,8 @@ $negative-spacer: -0.625rem;
     margin-bottom: 0.625em;
 }
 
-.cart-page .bundled-line-item + .bundled-line-item::before,
-.cart-page .bonus-line-item-row + .bonus-line-item-msg::before {
+.cart-page .bundled-line-item+.bundled-line-item::before,
+.cart-page .bonus-line-item-row+.bonus-line-item-msg::before {
     content: "";
     display: block;
     border-bottom: 0.063em dashed $horizontal-rule-grey;
