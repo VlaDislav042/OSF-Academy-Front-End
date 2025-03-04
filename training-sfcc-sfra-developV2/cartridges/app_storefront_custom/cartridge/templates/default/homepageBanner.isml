@@ -1,0 +1,6 @@
+<isdecorate template="common/layout/page">
+    <div class="homepage-banner">
+        <!-- Render the content asset with required attributes -->
+        <iscontent content="homepage-banner-content" type="text/html" charset="UTF-8" />
+    </div>
+</isdecorate>
