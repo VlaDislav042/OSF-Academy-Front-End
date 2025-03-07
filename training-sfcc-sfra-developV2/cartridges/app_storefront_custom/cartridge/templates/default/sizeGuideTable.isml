@@ -1,0 +1,63 @@
+<style>
+    .size-guide-wrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        /* Align items to the left */
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .size-guide-header {
+        flex: 1;
+        /* Header takes 1 part of the space */
+        padding-right: 30px;
+        /* More space between header and content */
+    }
+
+    .size-guide-header h1 {
+        font-size: 2em;
+        /* Big header size */
+        color: #333;
+        margin: 0;
+    }
+
+    .size-guide-content {
+        width: 75%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .size-guide-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .size-guide-content th,
+    .size-guide-content td {
+        border: 1px solid #ccc;
+        padding: 12px;
+        /* Increased padding for better spacing */
+        text-align: center;
+    }
+
+    .size-guide-content th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+</style>
+
+<div class="size-guide-wrapper">
+    <div class="size-guide-header">
+        <h1>Size Guide</h1> <!-- Big header on the left -->
+    </div>
+    <div class="size-guide-content">
+        <isscript>
+            var contentAsset = dw.content.ContentMgr.getContent('sizeGuideTableContent');  // Replace with your Content Asset ID
+            if (contentAsset && contentAsset.custom.body) {
+                out.print(contentAsset.custom.body);  // Output the body content of the Content Asset
+            }
+        </isscript>
+    </div>
+</div>
