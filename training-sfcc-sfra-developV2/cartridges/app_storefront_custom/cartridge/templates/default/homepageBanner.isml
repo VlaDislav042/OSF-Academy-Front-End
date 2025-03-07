@@ -1,0 +1,38 @@
+<style>
+    .container {
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-text {
+        font-size: 2.5em;
+        color: #333;
+        margin-top: 40px;
+        /* Space from the top */
+    }
+
+    .image-container {
+        margin: 40px auto;
+        /* Space from top and bottom */
+    }
+
+    .image-container img {
+        width: 80%;
+        max-width: 800px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: block;
+        margin: 0 auto;
+        /* Centering the image */
+    }
+</style>
+
+<div class="homepage-banner">
+    <isscript>
+        var contentAsset = dw.content.ContentMgr.getContent('homepage-content');
+        if (contentAsset) {
+            // Output the content as raw HTML
+            out.print(contentAsset.custom.body);
+        }
+    </isscript>
+</div>
