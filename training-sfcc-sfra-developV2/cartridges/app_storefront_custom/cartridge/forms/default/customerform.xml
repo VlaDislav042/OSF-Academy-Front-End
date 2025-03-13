@@ -1,0 +1,27 @@
+<form xmlns="http://www.demandware.com/xml/form/2008">
+    <field form-id="firstName" type="string" label="First Name" mandatory="true"/>
+    <field form-id="lastName" type="string" label="Last Name" mandatory="true"/>
+    <field form-id="address1" type="string" label="Address 1" mandatory="true"/>
+    <field form-id="address2" type="string" label="Address 2"/>
+    <field form-id="country" type="enum-of-string" label="Country" mandatory="true">
+        <value>USA</value>
+        <value>Canada</value>
+        <value>UK</value>
+        <value>Bulgaria</value>
+    </field>
+    <field form-id="state" type="string" label="State" mandatory="true"/>
+    <field form-id="postalCode" type="string" label="Postal Code" mandatory="true"/>
+    <field form-id="phoneNumber" type="string" label="Phone Number" mandatory="true"/>
+    <field form-id="comments" type="string" label="Comments" max-length="150"/>
+    <field form-id="cardNumber" type="string" label="Card Number" mandatory="true"/>
+    <field form-id="expMonth" type="enum-of-string" label="Exp Month" mandatory="true">
+        <value>01</value><value>02</value><value>03</value><value>04</value>
+        <value>05</value><value>06</value><value>07</value><value>08</value>
+        <value>09</value><value>10</value><value>11</value><value>12</value>
+    </field>
+    <field form-id="expYear" type="enum-of-string" label="Exp Year" mandatory="true">
+        <value>2025</value><value>2026</value><value>2027</value>
+    </field>
+    <field form-id="securityCode" type="string" label="Security Code" mandatory="true"/>
+    <field form-id="email" type="string" label="Email" mandatory="true"/>
+</form>
