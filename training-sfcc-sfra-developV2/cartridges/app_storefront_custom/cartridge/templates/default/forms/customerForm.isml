@@ -1,0 +1,79 @@
+<isprint value="${Resource.msg('customer.form.title', 'customerForm', null)}" />
+
+<form action="${formAction}" method="post">
+    <fieldset>
+        <legend>${Resource.msg('customer.form.shippinginfo', 'customerForm', null)}</legend>
+
+        <label for="firstName">${Resource.msg('customer.form.firstname', 'customerForm', null)}:</label>
+        <input type="text" name="firstName" required>
+
+        <label for="lastName">${Resource.msg('customer.form.lastname', 'customerForm', null)}:</label>
+        <input type="text" name="lastName" required>
+
+        <label for="address1">${Resource.msg('customer.form.address1', 'customerForm', null)}:</label>
+        <input type="text" name="address1" required>
+
+        <label for="address2">${Resource.msg('customer.form.address2', 'customerForm', null)}:</label>
+        <input type="text" name="address2">
+
+        <label for="country">${Resource.msg('customer.form.country', 'customerForm', null)}:</label>
+        <select name="country">
+            <option>USA</option>
+            <option>Canada</option>
+            <option>UK</option>
+        </select>
+
+        <label for="state">${Resource.msg('customer.form.state', 'customerForm', null)}:</label>
+        <input type="text" name="state" required>
+
+        <label for="postalCode">${Resource.msg('customer.form.postalCode', 'customerForm', null)}:</label>
+        <input type="text" name="postalCode" required>
+
+        <label for="phoneNumber">${Resource.msg('customer.form.phoneNumber', 'customerForm', null)}:</label>
+        <input type="text" name="phoneNumber" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>${Resource.msg('customer.form.paymentinfo', 'customerForm', null)}</legend>
+
+        <label for="cardNumber">${Resource.msg('customer.form.cardNumber', 'customerForm', null)}:</label>
+        <input type="text" name="cardNumber" required>
+
+        <label for="expMonth">${Resource.msg('customer.form.expMonth', 'customerForm', null)}:</label>
+        <select name="expMonth">
+            <option>01</option>
+            <option>02</option>
+            <option>03</option>
+            <option>04</option>
+            <option>05</option>
+            <option>06</option>
+            <option>07</option>
+            <option>08</option>
+            <option>09</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+        </select>
+
+        <label for="expYear">${Resource.msg('customer.form.expYear', 'customerForm', null)}:</label>
+        <select name="expYear">
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+        </select>
+
+        <label for="securityCode">${Resource.msg('customer.form.securityCode', 'customerForm', null)}:</label>
+        <input type="text" name="securityCode" required>
+
+        <label for="email">${Resource.msg('customer.form.email', 'customerForm', null)}:</label>
+        <input type="email" name="email" required>
+    </fieldset>
+
+    <label for="comments">${Resource.msg('customer.form.comments', 'customerForm', null)}:</label>
+    <textarea id="comments" name="comments" maxlength="150"></textarea>
+    <p id="charCount">${Resource.msgf('customer.form.comments.remaining', 'customerForm', null, '150')}</p>
+
+    <button type="submit">${Resource.msg('customer.form.submit', 'customerForm', null)}</button>
+</form>
+
+<button id="scrollToTop">${Resource.msg('customer.form.scrollToTop', 'customerForm', null)}</button>
