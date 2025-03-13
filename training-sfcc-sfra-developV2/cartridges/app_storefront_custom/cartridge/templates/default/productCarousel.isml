@@ -1,0 +1,71 @@
+<!-- productCarousel.isml -->
+<p>✅ productCarousel.isml is loaded!</p>
+
+<div class="product-carousel">
+    <div class="product-item">
+        <!-- productCarousel.isml -->
+        <p>✅ productCarousel.isml is loaded!</p>
+
+        <div class="product-carousel">
+            <!-- Fetch products from content slot -->
+            <isslot id="header-banner" description="Product Carousel Slot" context="global" />
+
+            <!-- Loop through products and display them -->
+            <isloop items="${pdict.ContentSlot.content}" var="product">
+                <div class="product-item">
+                    <isinclude template="productTile" product="${product}" />
+                </div>
+            </isloop>
+        </div>
+
+
+
+    </div>
+</div>
+
+<!-- Load jQuery First -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<!-- Load Slick (Ensure it's loaded from CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" defer></script>
+
+<!-- Load Slick Styles -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function () {
+        const productCarousel = document.querySelector('.product-carousel');
+        const products = productCarousel ? productCarousel.querySelectorAll('.product-item') : [];
+
+        if (productCarousel && products.length > 0) {
+            console.log(`✅ Found ${products.length} products, initializing Slick...`);
+            $('.product-carousel').slick({
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                    { breakpoint: 768, settings: { slidesToShow: 1 } }
+                ]
+            });
+        } else if (!productCarousel) {
+            console.error("❌ Product carousel element not found!");
+        } else {
+            console.error("❌ No products found in content slot!");
+        }
+    }, 1000);
+});
+</script>
+
+<!-- Add Basic Styling -->
+<style>
+    .product-carousel {
+        width: 100%;
+        margin: auto;
+    }
+
+    .product-item {
+        padding: 10px;
+    }
+</style>

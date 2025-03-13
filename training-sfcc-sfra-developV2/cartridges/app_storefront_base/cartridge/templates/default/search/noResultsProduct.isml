@@ -1,3 +1,5 @@
+<!-- Slot for no results help -->
 <isslot id="noresults-help" description="Recommendations for no result search" context="global" />
 
+<!-- Slot for no result recommendations -->
 <isslot id="noresult-recommendations" description="Recommendations for no result search" context="global" />
