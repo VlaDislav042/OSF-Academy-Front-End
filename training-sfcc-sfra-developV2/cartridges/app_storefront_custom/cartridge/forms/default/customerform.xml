@@ -7,6 +7,7 @@
         <value>USA</value>
         <value>Canada</value>
         <value>UK</value>
+        <value>Bulgaria</value>
     </field>
     <field form-id="state" type="string" label="State" mandatory="true"/>
     <field form-id="postalCode" type="string" label="Postal Code" mandatory="true"/>
