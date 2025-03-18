@@ -487,6 +487,20 @@ function getProductSearchHit(apiProduct) {
     }
     return hit;
 }
+function getProductCategory(product) {
+    if (product.primaryCategory) {
+        return {
+            id: product.primaryCategory.ID,
+            name: product.primaryCategory.displayName
+        };
+    } else if (product.classificationCategory) {
+        return {
+            id: product.classificationCategory.ID,
+            name: product.classificationCategory.displayName
+        };
+    }
+    return null;
+}
 
 module.exports = {
     getOptionValues: getOptionValues,

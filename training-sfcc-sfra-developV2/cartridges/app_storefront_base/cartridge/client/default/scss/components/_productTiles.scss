@@ -2,6 +2,22 @@
 @import "productCommon";
 @import "quickView";
 
+.product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-tile {
+    position: relative;
+    /* Ensure the container is positioned relative to allow absolute positioning of the badge */
+}
+
 .product-tile {
 
     @include media-breakpoint-down(md) {
