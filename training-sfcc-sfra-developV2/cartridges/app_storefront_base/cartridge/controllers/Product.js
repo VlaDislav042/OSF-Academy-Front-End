@@ -9,6 +9,8 @@ var server = require('server');
 var cache = require('*/cartridge/scripts/middleware/cache');
 var consentTracking = require('*/cartridge/scripts/middleware/consentTracking');
 var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
+var CatalogMgr = require('dw/catalog/CatalogMgr');
+
 
 /**
  * @typedef ProductDetailPageResourceMap
@@ -33,6 +35,9 @@ var pageMetaData = require('*/cartridge/scripts/middleware/pageMetaData');
   * @param {serverfunction} - get
   */
 server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, function (req, res, next) {
+    var categoryID = req.querystring.cid || 'your-default-category-id';
+    var category = CatalogMgr.getCategory('432ceb2819ec7d2ba8f88ca8d2');
+
     var productHelper = require('*/cartridge/scripts/helpers/productHelpers');
     var showProductPageHelperResult = productHelper.showProductPage(req.querystring, req.pageMetaData);
     var productType = showProductPageHelperResult.product.productType;
@@ -56,7 +61,9 @@ server.get('Show', cache.applyPromotionSensitiveCache, consentTracking.consent, 
                 resources: showProductPageHelperResult.resources,
                 breadcrumbs: showProductPageHelperResult.breadcrumbs,
                 canonicalUrl: showProductPageHelperResult.canonicalUrl,
-                schemaData: showProductPageHelperResult.schemaData
+                schemaData: showProductPageHelperResult.schemaData,
+                //category: category
+
             });
         }
     }

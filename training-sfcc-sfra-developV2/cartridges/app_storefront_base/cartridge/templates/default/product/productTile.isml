@@ -1,8 +1,29 @@
 <div class="product-tile">
     <!-- dwMarker="product" dwContentID="${product.uuid}" -->
 
-    <p>Category Debug: ${category}</p>
-    <p>Category ID: ${category.ID}</p>
+    <div class="badge">
+        <isif condition="${!empty product}">
+            <p>✅ Product Found:
+                <isprint value="${product.ID}" />
+            </p>
+
+            <isif condition="${!empty product.getCategories()}">
+                <p>✅ Categories found:</p>
+                <ul>
+                    <isloop items="${product.getCategories()}" var="category">
+                        <li>Category ID:
+                            <isprint value="${category.ID}" />
+                        </li>
+                    </isloop>
+                </ul>
+                <iselse>
+                    <p>❌ No categories found for this product.</p>
+            </isif>
+            <iselse>
+                <p>❌ No product object found.</p>
+        </isif>
+
+    </div>
 
 
     <isinclude template="product/components/productTileImage" />

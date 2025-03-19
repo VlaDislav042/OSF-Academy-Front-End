@@ -502,7 +502,26 @@ function getProductCategory(product) {
     return null;
 }
 
+function getProductCategoryData(productId) {
+    var product = ProductMgr.getProduct(productId);
+    var category = product ? product.getPrimaryCategory() : null;
+
+    if (category) {
+        Logger.info('Product ID: ' + product.ID + ' | Category: ' + category.ID);
+        return {
+            id: category.ID,
+            badgeText: category.custom.badgeText || 'No Badge',
+            badgeBackgroundColor: category.custom.badgeBackgroundColor || '#FFFFFF',
+            badgeTextColor: category.custom.badgeTextColor || '#000000'
+        };
+    }
+
+    Logger.info('No category found for product: ' + productId);
+    return null;
+}
+
 module.exports = {
+    getProductCategoryData: getProductCategoryData,
     getOptionValues: getOptionValues,
     getOptions: getOptions,
     getCurrentOptionModel: getCurrentOptionModel,
