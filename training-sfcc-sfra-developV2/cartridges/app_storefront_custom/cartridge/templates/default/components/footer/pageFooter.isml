@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="${URLUtils.staticURL('/css/footer.css')}">
+
+
+<footer id="footercontent">
+    <div id="container">
+        <div id="footer-benefits">
+            <iscontentasset aid="footer-benefits" />
+        </div>
+        <div id="footer-middle">
+            <iscontentasset aid="footer-middle" />
+        </div>
+        <div id="footer-service">
+            <iscontentasset aid="footer-service" />
+        </div>
+        <div id="footer-account-section">
+            <iscontentasset aid="footer-account-section" />
+        </div>
+        <div id="footer-about-section">
+            <iscontentasset aid="footer-about-section" />
+        </div>
+        <div id="footer-paragraph">
+            <iscontentasset aid="footer-paragraph" />
+        </div>
+        <div id="footer-credentials">
+            <iscontentasset aid="footer-credentials" />
+        </div>
+    </div>
+
+</footer>
