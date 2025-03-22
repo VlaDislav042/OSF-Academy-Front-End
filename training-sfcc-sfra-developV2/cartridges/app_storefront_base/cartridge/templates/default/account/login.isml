@@ -7,73 +7,35 @@
     </isscript>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function () {
-        $(".image-switcher img").click(function () {
-            // Remove selection from all images
-            $(".image-switcher img").removeClass("selected");
+        $(document).ready(function () {
+    console.log("✅ jQuery is loaded!");
 
-            // Add selection to clicked image
-            $(this).addClass("selected");
+    // Set default selection (First image and first card)
+    $(".img1").addClass("selected");
+    $(".first-card").addClass("active").show();
+    $(".second-card").removeClass("active").hide();
 
-            // Check which image was clicked
-            if ($(this).hasClass("img1")) {
-                $(".first-card").show();
-                $(".second-card").hide();
-            } else if ($(this).hasClass("img2")) {
-                $(".first-card").hide();
-                $(".second-card").show();
-            }
-        });
+    $(".image-switcher .hover-image").on("click", function () {
+        console.log("Image Clicked:", $(this).attr("class"));
 
-        // Ensure a default card is shown when the page loads
-        $(".img1").addClass("selected"); // Set img1 as default selected
-        $(".first-card").show();
+        // Remove "selected" from all images, then add to clicked one
+        $(".image-switcher .hover-image").removeClass("selected");
+        $(this).addClass("selected");
+
+        // Show the correct card
+        if ($(this).hasClass("img1")) {
+            $(".first-card").addClass("active").show();
+            $(".second-card").removeClass("active").hide();
+        } else if ($(this).hasClass("img2")) {
+            $(".first-card").removeClass("active").hide();
+            $(".second-card").addClass("active").show();
+        }
     });
-</script>
+});
 
-
-
+    </script>
     <style>
-        .image-switcher {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            width: 100%;
-            padding: 20px 0;
-        }
 
-        /* Default state: both images are desaturated */
-        .image-switcher img {
-            width: 300px;
-            height: 300px;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease-in-out, transform 0.2s ease-in-out;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        /* When an image is selected (colored) */
-        .image-switcher img.selected {
-            filter: grayscale(0%);
-            transform: scale(1.1);
-        }
-
-        /* Hide both cards initially */
-        .card {
-            display: none;
-        }
-
-        /* Show first card when img1 is selected */
-        .card.first-card {
-            display: block;
-        }
-
-        /* Show second card when img2 is selected */
-        .card.second-card {
-            display: block;
-        }
     </style>
 
     <div class="hero slant-down login-banner">
@@ -115,11 +77,13 @@
 
             <div class="col-sm-8 col-md-6">
                 <div class="card second-card">
-                    <!-- Second Card -->
-                    <isinclude template="account/components/trackOrderForm" />
+                    <div class="card-body">
+                        <!-- Second Card -->
+                        <isinclude template="account/components/trackOrderForm" />
+                    </div>
+
                 </div>
             </div>
         </div>
-
     </div>
 </isdecorate>
